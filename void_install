@@ -8,14 +8,14 @@ sudo rm -fr /var/service/agetty-tty6
 
 sudo xbps-install -Suv
 sudo xbps-install -Suv
-sudo xbps-install -Sv htop xorg-minimal xinit xf86-video-intel neofetch nano make build-essential curl font-sourcecodepro feh gparted openssh scrot autoconf automake gtk+3-devel gnome-themes-standard gtk-engine-murrine papirus-icon-theme noto-fonts-ttf thunderbird bzip2 xz zip unzip p7zip volumeicon alsa-utils alsa-tools xtools python-pip void-repo-multilib
+sudo xbps-install -Sv htop xorg-minimal xinit xf86-video-intel neofetch nano make build-essential curl font-sourcecodepro gparted openssh scrot autoconf automake gtk+3-devel gnome-themes-standard gtk-engine-murrine papirus-icon-theme noto-fonts-ttf thunderbird tar bzip2 xz zip unzip p7zip volumeicon alsa-utils alsa-tools xtools python-pip void-repo-multilib
 
 curl -L https://get.oh-my.fish | fish
 omf install pure
 
 cd /dwm-6.1/
 sudo make clean install
-cd ../st-0.8.1/
+cd ../st/
 sudo make clean install
 cd
 

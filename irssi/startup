@@ -1,0 +1,7 @@
+script load awl
+script load trackbar22
+set trackbar_string _
+set trackbar_style %r
+script load nickcolor.pl
+script load usercount.pl
+sbar awl_0 add -before awl_0 -alignment right usercount
