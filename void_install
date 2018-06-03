@@ -4,8 +4,8 @@ sudo rm -fr /var/service/agetty-tty4
 sudo rm -fr /var/service/agetty-tty5
 sudo rm -fr /var/service/agetty-tty6
 
-sudo xbps-install -Suvy && sudo xbps-install -Suvy 
-sudo xbps-install -Suvy fish-shell htop xorg-minimal xinit xf86-video-intel neofetch nano make base-devel curl font-sourcecodepro scrot autoconf automake gtk+3-devel gnome-themes-standard gtk-engine-murrine noto-fonts-ttf tar bzip2 xz zip unzip p7zip alsa-utils alsa-tools xtools ranger python python3 python-pip dmenu irssi w3m w3m-img libexif-devel imlib2-devel giflib-devel xorg-fonts compton xset xsetroot hsetroot xrandr setxkbmap acpi
+sudo xbps-install -Suvy && sudo xbps-install -Suvy
+sudo xbps-install -Suvy fish-shell htop xorg-minimal xinit xf86-video-intel neofetch nano make base-devel curl font-sourcecodepro scrot autoconf automake gtk+3-devel gnome-themes-standard gtk-engine-murrine noto-fonts-ttf tar bzip2 xz zip unzip p7zip alsa-utils alsa-tools xtools ranger python python3 python-pip dmenu irssi w3m w3m-img libexif-devel imlib2-devel giflib-devel xorg-fonts compton xset xsetroot hsetroot xrandr setxkbmap acpi irssi-perl xtools
 
 sudo pip install setuptools wheel ps_mem
 cp -v .xinitrc ~/
