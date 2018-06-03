@@ -4,19 +4,21 @@ sudo rm -fr /var/service/agetty-tty4
 sudo rm -fr /var/service/agetty-tty5
 sudo rm -fr /var/service/agetty-tty6
 
-sudo xbps-install -Suvy && sudo xbps-install -Suvy
-sudo xbps-install -Sv fish-shell htop xorg-minimal xinit xf86-video-intel neofetch nano make build-essential curl font-sourcecodepro scrot autoconf automake gtk+3-devel gnome-themes-standard gtk-engine-murrine noto-fonts-ttf tar bzip2 xz zip unzip p7zip alsa-utils alsa-tools xtools ranger python python3 python-pip void-repo-multilib
+sudo xbps-install -Suvy && sudo xbps-install -Suvy 
+sudo xbps-install -Suvy fish-shell htop xorg-minimal xinit xf86-video-intel neofetch nano make base-devel curl font-sourcecodepro scrot autoconf automake gtk+3-devel gnome-themes-standard gtk-engine-murrine noto-fonts-ttf tar bzip2 xz zip unzip p7zip alsa-utils alsa-tools xtools ranger python python3 python-pip dmenu irssi w3m w3m-img
 
-chsh -s /usr/bin/fish
-curl -L https://get.oh-my.fish | fish
-omf install pure
+sudo pip install setuptools wheel ps_mem
+cp -v .xinitrc ~/
 
-pip install setuptools wheel ps_mem
-
-cd /dwm-6.1/
+cd ./dwm-6.1/
 sudo make clean install
-cd ../st/
+cd ../st\ term/
 sudo make clean install
 cd
 
+rm -rf ./arc-theme/
 git clone https://github.com/horst3180/arc-theme --depth 1 && cd arc-theme && ./autogen.sh --prefix=/usr
+
+chsh -s /usr/bin/fish
+curl -L https://get.oh-my.fish | fish
+
