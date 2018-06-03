@@ -1,0 +1,29 @@
+
+
+X.Org X Server 1.19.6
+Release Date: 2017-12-20
+X Protocol Version 11, Revision 0
+Build Operating System: Linux 4.14.26_1 i686 
+Current Operating System: Linux levoid 4.12.13_1 #1 SMP PREEMPT Thu Sep 14 13:15:00 UTC 2017 i686
+Kernel command line: BOOT_IMAGE=/boot/vmlinuz-4.12.13_1 root=UUID=1a3e0c02-f3c4-4929-828a-a587c6fdce23 ro loglevel=4 slub_debug=P page_poison=1
+Build Date: 27 April 2018  09:02:20PM
+ 
+Current version of pixman: 0.34.0
+	Before reporting problems, check http://wiki.x.org
+	to make sure that you have the latest version.
+Markers: (--) probed, (**) from config file, (==) default setting,
+	(++) from command line, (!!) notice, (II) informational,
+	(WW) warning, (EE) error, (NI) not implemented, (??) unknown.
+(==) Log file: "/var/log/Xorg.0.log", Time: Sun Jun  3 14:42:27 2018
+(==) Using system config directory "/usr/share/X11/xorg.conf.d"
+pci id for fd 13: 8086:0be1, driver (null)
+EGL_MESA_drm_image required.
+xset:  bad font path element (#6), possible causes are:
+    Directory does not exist or has wrong permissions
+    Directory missing fonts.dir
+    Incorrect font server address or syntax
+Using O_TMPFILE
+xinit: connection to X server lost
+
+waiting for X server to shut down (II) Server terminated successfully (0). Closing log file.
+.

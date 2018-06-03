@@ -26,4 +26,7 @@ git clone https://github.com/horst3180/arc-theme --depth 1 && cd arc-theme && ./
 
 chsh -s /usr/bin/fish
 curl -L https://get.oh-my.fish | fish
+git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 
+base16-onedark
+sudo update-grub

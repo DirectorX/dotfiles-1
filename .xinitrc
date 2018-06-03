@@ -10,10 +10,8 @@ xsetroot -name "`echo $DATE \| $BATT\% $STATUS`" # status bar
 sleep 30
 done &
 
-setxkbmap es					 # keyboard
 xset fp+ /usr/share/fonts/ &			 # font stuff
 xset fp rehash &
 compton --vsync opengl -cb &			 # nice shadows and transitions
 hsetroot -solid '#98c379'			 # boring background
-xrandr --output LVDS1 --brightness 0.70          # brightness is 100% otherwise
 exec dwm
