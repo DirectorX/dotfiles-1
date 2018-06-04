@@ -1,5 +1,7 @@
 #!/bin/sh
 
+xrdb -merge -I$HOME ~/.Xresources
+
 # my stuff
 while true; do
 BATT=$( acpi -b | sed 's/.*[charging|unknown], \([0-9]*\)%.*/\1/gi' )
@@ -13,5 +15,6 @@ done &
 xset fp+ /usr/share/fonts/ &			 # font stuff
 xset fp rehash &
 compton --vsync opengl -cb &			 # nice shadows and transitions
-hsetroot -solid '#98c379'			 # boring background
+hsetroot -fill wallpaper.jpg 			 # cool af wallpaper
+xrandr --output LVDS-1 --brightness 0.8
 exec dwm
