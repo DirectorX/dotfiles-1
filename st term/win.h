@@ -23,11 +23,6 @@ enum win_mode {
 	                  |MODE_MOUSEMANY,
 };
 
-#define _NET_WM_STATE_REMOVE  0
-#define _NET_WM_STATE_ADD     1
-#define _NET_WM_STATE_TOGGLE  2
-#define GET_WINDOW_PROPERTY_SIZE 65535
-
 void xbell(void);
 void xclipcopy(void);
 void xdrawcursor(int, int, Glyph, int, int, Glyph);
@@ -41,9 +36,3 @@ void xsetmode(int, unsigned int);
 void xsetpointermotion(int);
 void xsetsel(char *);
 int xstartdraw(void);
-
-char winid[64];
-
-/* background alpha */
-#define OPAQUE 0xFF /* 255 */
-#define USE_ARGB (alpha != OPAQUE && opt_embed == NULL)
