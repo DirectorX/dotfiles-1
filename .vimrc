@@ -12,7 +12,7 @@ syntax on
 filetype plugin indent on
 
 " Show line column
-set number
+set nu
 
 " Enable plugins
 if empty(glob('~/.vim/autoload/plug.vim'))
