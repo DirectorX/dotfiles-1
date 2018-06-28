@@ -5,6 +5,12 @@ set nocompatible
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
 
+" Traverse line breaks
+set whichwrap=b,s,<,>,[,]
+
+" Highlight current line
+set cursorline
+
 " Switch syntax highlighting on
 syntax on
 
@@ -35,7 +41,7 @@ call plug#end()
 " Plugins settings
 
 " Base16
-colorscheme base16-solarized-light
+colorscheme base16-onedark
 let base16colorspace=256  " Access colors present in 256 colorspace
 
 " Nerdtree
