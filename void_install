@@ -5,14 +5,14 @@ sudo rm -fr /var/service/agetty-tty5
 sudo rm -fr /var/service/agetty-tty6
 
 sudo xbps-install -Suvy && sudo xbps-install -Suvy
-sudo xbps-install -Suvy fish-shell htop xorg-minimal xinit xf86-video-intel neofetch nano make base-devel curl font-sourcecodepro scrot autoconf automake gtk+3-devel gnome-themes-standard gtk-engine-murrine noto-fonts-ttf tar bzip2 xz zip unzip p7zip alsa-utils alsa-tools xtools ranger python python3 python-pip dmenu irssi w3m w3m-img libexif-devel imlib2-devel giflib-devel xorg-fonts compton xset xsetroot hsetroot xrandr setxkbmap acpi irssi-perl xtools
+sudo xbps-install -Suvy vim fish-shell htop xorg-minimal xinit xf86-video-intel neofetch nano make base-devel curl font-sourcecodepro scrot autoconf automake gtk+3-devel gnome-themes-standard gtk-engine-murrine noto-fonts-ttf tar bzip2 xz zip unzip p7zip alsa-utils alsa-tools xtools ranger python python3 python-pip dmenu irssi w3m w3m-img libexif-devel imlib2-devel giflib-devel xorg-fonts compton xset xsetroot hsetroot xrandr setxkbmap acpi irssi-perl xtools lxappearance
 
 sudo pip install setuptools wheel ps_mem
 cp -v .xinitrc ~/
 mkdir ~/.irssi
 cp -vr irssi/* ~/.irssi
 
-cd ./dwm-6.1/
+cd ./dwm/
 sudo make clean install
 cd ../st\ term/
 sudo make clean install
@@ -26,6 +26,7 @@ git clone https://github.com/horst3180/arc-theme --depth 1 && cd arc-theme && ./
 
 chsh -s /usr/bin/fish
 curl -L https://get.oh-my.fish | fish
+omf install pure
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 
 base16-onedark
