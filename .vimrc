@@ -69,5 +69,5 @@ hi! GitGutterChangeDelete ctermbg=NONE
 set updatetime=100
 
 " Other colors
-highlight CursorLineNr ctermfg=grey
-highlight LineNr ctermfg=darkgrey
+"highlight CursorLineNr ctermfg=grey
+"highlight LineNr ctermfg=darkgrey
