@@ -27,7 +27,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'chriskempson/base16-vim'
 Plug 'miyakogi/seiya.vim'
-Plug 'airblade/vim-gitgutter'
 
 " Initialize plugin system
 call plug#end()
