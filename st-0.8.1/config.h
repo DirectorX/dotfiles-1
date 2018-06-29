@@ -83,11 +83,10 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-unsigned int alpha = 0xEF;
+unsigned int alpha = 0xcc;
 
-
-/* One Dark */
 /* Terminal colors (16 first used in escape sequence) */
+/* One Dark */
 static const char *colorname[] = {
 	"#282c34", /* base00 */
 	"#e06c75", /* base08 */
@@ -105,11 +104,13 @@ static const char *colorname[] = {
 	"#b6bdca", /* base06 */
 	"#be5046", /* base0F */
 	"#c8ccd4", /* base07 */
+    [255] = 0,
+    "#282c33", /* extra color for background */
 };
 
 
 unsigned int defaultfg = 7;
-unsigned int defaultbg = 0;
+unsigned int defaultbg = 256;
 static unsigned int defaultcs = 13;
 static unsigned int defaultrcs = 0;
 
