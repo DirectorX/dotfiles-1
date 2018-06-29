@@ -22,10 +22,28 @@ set nu
 
 " Enable plugins
 if empty(glob('~/.vim/autoload/plug.vim'))
-	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
 	\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+
+" Set tabs to have 4 spaces
+set ts=4
+
+" Indent when moving to the next line while writing code
+set autoindent
+
+" Expand tabs into spaces
+set expandtab
+
+" When using the >> or << commands, shift lines by 4 spaces
+set shiftwidth=4
+
+" Ehow the matching part of the pair for [] {} and ()
+set showmatch
+
+" Enable all Python syntax highlighting features
+let python_highlight_all = 1
 
 " Plugins
 call plug#begin('~/.vim/plugged')
@@ -68,6 +86,3 @@ hi! GitGutterDelete ctermbg=NONE
 hi! GitGutterChangeDelete ctermbg=NONE
 set updatetime=100
 
-" Other colors
-"highlight CursorLineNr ctermfg=grey
-"highlight LineNr ctermfg=darkgrey
