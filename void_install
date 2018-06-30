@@ -5,16 +5,16 @@ sudo rm -fr /var/service/agetty-tty5
 sudo rm -fr /var/service/agetty-tty6
 
 sudo xbps-install -Suvy && sudo xbps-install -Suvy
-sudo xbps-install -Suvy vim fish-shell htop xorg-minimal xinit xf86-video-intel neofetch nano make base-devel curl font-sourcecodepro scrot autoconf automake gtk+3-devel gnome-themes-standard gtk-engine-murrine noto-fonts-ttf tar bzip2 xz zip unzip p7zip alsa-utils alsa-tools xtools ranger python python3 python-pip dmenu irssi w3m w3m-img libexif-devel imlib2-devel giflib-devel xorg-fonts compton xset xsetroot hsetroot xrandr setxkbmap acpi irssi-perl xtools lxappearance
+sudo xbps-install -Suvy vim fish-shell htop xorg-minimal xinit xf86-video-intel neofetch make base-devel curl font-sourcecodepro scrot autoconf automake gtk+3-devel gnome-themes-standard gtk-engine-murrine noto-fonts-ttf tar bzip2 xz zip unzip p7zip alsa-utils alsa-tools xtools ranger python python3 python-pip dmenu irssi w3m w3m-img libexif-devel imlib2-devel giflib-devel xorg-fonts compton xset xsetroot hsetroot xrandr setxkbmap acpi irssi-perl xtools lxappearance udiskie
 
 sudo pip install setuptools wheel ps_mem
-cp -v .xinitrc ~/
+cp -v .vimrc compton.conf run-dwm.sh .Xresources ~/
 mkdir ~/.irssi
 cp -vr irssi/* ~/.irssi
 
 cd ./dwm/
 sudo make clean install
-cd ../st\ term/
+cd ../st/
 sudo make clean install
 cd ../sxiv-24/
 make
