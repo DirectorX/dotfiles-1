@@ -8,12 +8,12 @@ static const unsigned int snap      = 16;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Source Code Pro Medium:size=8" };
-static const char dmenufont[]       = "Source Code Pro Medium:size=8";
-static const char normbordercolor[] = "#3e4451";
+static const char dmenufont[]       = "Source Code Pro Medeum:size=8";
+static const char normbordercolor[] = "#353b45";
 static const char normbgcolor[]     = "#282c34";
-static const char normfgcolor[]     = "#abb2bf";
-static const char selbordercolor[]  = "#81a2be";
-static const char selbgcolor[]      = "#3e4451";
+static const char normfgcolor[]     = "#6e757f";
+static const char selbordercolor[]  = "#565c64";
+static const char selbgcolor[]      = "#282c34";
 static const char selfgcolor[]      = "#c8ccd4";
 static const char *colors[][3]      = {
 	/*               fg            bg             border   */
