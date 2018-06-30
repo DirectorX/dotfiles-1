@@ -12,7 +12,7 @@ static const char dmenufont[]       = "Source Code Pro Medeum:size=8";
 static const char normbordercolor[] = "#353b45";
 static const char normbgcolor[]     = "#282c34";
 static const char normfgcolor[]     = "#6e757f";
-static const char selbordercolor[]  = "#565c64";
+static const char selbordercolor[]  = "#6e757f";
 static const char selbgcolor[]      = "#282c34";
 static const char selfgcolor[]      = "#c8ccd4";
 static const char *colors[][3]      = {
