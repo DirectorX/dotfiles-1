@@ -21,7 +21,7 @@ compton --config compton.conf &
 hsetroot -fill ~/Pictures/Wallpaper/samus.jpg
 
 # Set brightness to 80%
-xrandr --output LVDS-1 --brightness 0.8
+xrandr --output LVDS1 --brightness 0.8
 
 # Spanish keyboard
 setxkbmap -layout latam -variant deadtilde

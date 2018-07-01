@@ -7,8 +7,8 @@ static const unsigned int gappx     = 8;        /* gap pixel between windows */
 static const unsigned int snap      = 16;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Source Code Pro Medium:size=8" };
-static const char dmenufont[]       = "Source Code Pro Medeum:size=8";
+static const char *fonts[]          = { "SauceCodePro Nerd Font:size=8" };
+static const char dmenufont[]       = "SauceCodePro Nerd Font:size=8";
 static const char normbordercolor[] = "#353b45";
 static const char normbgcolor[]     = "#282c34";
 static const char normfgcolor[]     = "#7a828d";

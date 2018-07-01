@@ -50,7 +50,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'chriskempson/base16-vim'
-Plug 'miyakogi/seiya.vim'
 Plug 'airblade/vim-gitgutter'
 
 " Initialize plugin system
@@ -65,9 +64,6 @@ map <F10> :NERDTreeToggle<CR>
 
 " Current file in nerdtree
 map <F9> :NERDTreeFind<CR>
-
-" Seiya (transparent backgrounds)
-let g:seiya_auto_enable=1
 
 " Base16
 let base16colorspace=256  " Access colors present in 256 colorspace
@@ -86,3 +82,8 @@ hi! GitGutterDelete ctermbg=NONE
 hi! GitGutterChangeDelete ctermbg=NONE
 set updatetime=100
 
+" Misc
+
+" Remove background from
+hi LineNr ctermbg=NONE
+hi SignColumn ctermbg=NONE
