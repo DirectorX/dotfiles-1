@@ -14,15 +14,11 @@ while true; do
     sleep 30
 done &
 
-# Font stuff
-xset fp+ /usr/share/fonts/ &			 
-xset fp rehash &
-
 # Transparencies, shadows and transitions
 compton --config compton.conf &
 
 # Cool AF wallpaper
-hsetroot -fill ~/Pictures/Wallpaper/minimalist_portal_wallpaper_by_younggeorge-d5rnf8r.png 			 
+hsetroot -fill ~/Pictures/Wallpaper/samus.jpg
 
 # Set brightness to 80%
 xrandr --output LVDS-1 --brightness 0.8
