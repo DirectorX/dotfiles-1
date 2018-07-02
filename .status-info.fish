@@ -16,7 +16,7 @@ set THERMAL_ICON \uf2c7
 #--- Variables ---#
 
 # CPU Usage
-set CPU_USAGE (top -b -n1 | grep "Cpu(s)" | awk '{printf "%.2f %%", $2 + $4}')
+set CPU_USAGE (top -b -n1 | grep "Cpu(s)" | awk '{printf "%2d%%", $2 + $4}')
 set CPU_USAGE $PROCESSOR_ICON $CPU_USAGE $SEPARATOR
 
 # Memory Usage
