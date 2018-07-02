@@ -39,7 +39,7 @@ set expandtab
 " When using the >> or << commands, shift lines by 4 spaces
 set shiftwidth=4
 
-" Ehow the matching part of the pair for [] {} and ()
+" Show the matching part of the pair for [] {} and ()
 set showmatch
 
 " Enable all Python syntax highlighting features
