@@ -110,7 +110,7 @@ set DATE $CALENDAR_ICON $DATE $SEPARATOR
 
 # Time
 set TIME (date +"%R")
-set TIME $TIME_ICON $TIME
+set TIME $TIME_ICON $TIME" "
 
 # Volume
 set VOLUME (amixer get Master | sed -n 's/^.*\[\([0-9]\+\)%.*$/\1/p'| uniq)
