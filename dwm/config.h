@@ -22,7 +22,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "One", "Two", "Three" };
+static const char *tags[] = { "爵", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -43,11 +43,11 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[t]",      tile },    /* first entry is default */
-	{ "[f]",      NULL },    /* no layout function means floating behavior */
-	{ "[m]",      monocle },
-	{ "[g]",      gaplessgrid },
-	{ "[c]",      col },
+	{ "  ﴳ",      tile },    /* first entry is default */
+	{ "  缾",      NULL },    /* no layout function means floating behavior */
+	{ "  类",      monocle },
+	{ "  ",      gaplessgrid },
+	{ "  ",      col },
 };
 
 /* key definitions */
