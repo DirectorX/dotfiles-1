@@ -6,7 +6,7 @@ xrdb -merge -I$HOME ~/.Xresources
 
 # DWM-Status
 while true; do
-    ~/.status-info
+    ~/.status-info.fish
 done &
 
 # Transparencies, shadows and transitions
