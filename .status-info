@@ -1,9 +1,71 @@
-#!/bin/bash
+#!/bin/fish
 
-BATC=$(</sys/class/power_supply/BAT0/capacity)
-WIFI=$(iwgetid -r)
-DATE=$(date +"%a %d %b, %R")
-STATUS=`echo WIFI $WIFI \| BATT "$BATC"\% \| $DATE`
+# Icons
+set SEPARATOR \ue621
+set WIFI_ICON \uf1eb
+
+
+# Variables
+read -x BATC < /sys/class/power_supply/BAT0/capacity
+read -x BATS < /sys/class/power_supply/BAT0/status
+
+switch $BATS
+    case "Discharging"
+        if test $BATC -gt 90
+            set BATC \uf578 $BATC
+        else if test $BATC -le 90; and test $BATC -gt 80
+            set BATC \uf581 $BATC
+        else if test $BATC -le 80; and test $BATC -gt 70
+            set BATC \uf580 $BATC
+        else if test $BATC -le 70; and test $BATC -gt 60
+            set BATC \uf57f $BATC
+        else if test $BATC -le 60; and test $BATC -gt 50
+            set BATC \uf57e $BATC
+        else if test $BATC -le 50; and test $BATC -gt 40
+            set BATC \uf57d $BATC
+        else if test $BATC -le 40; and test $BATC -gt 30
+            set BATC \uf57c $BATC
+        else if test $BATC -le 30; and test $BATC -gt 20
+            set BATC \uf57b $BATC
+        else if test $BATC -le 20; and test $BATC -gt 10
+            set BATC \uf57a $BATC
+        else if test $BATC -le 10; and test $BATC -gt 0
+            set BATC \uf582 $BATC
+        end
+
+    case "Charging"    
+        if test $BATC -gt 90
+            set BATC \uf578 $BATC
+        else if test $BATC -le 90; and test $BATC -gt 80
+            set BATC \uf581 $BATC
+        else if test $BATC -le 80; and test $BATC -gt 70
+            set BATC \uf580 $BATC
+        else if test $BATC -le 70; and test $BATC -gt 60
+            set BATC \uf57f $BATC
+        else if test $BATC -le 60; and test $BATC -gt 50
+            set BATC \uf57e $BATC
+        else if test $BATC -le 50; and test $BATC -gt 40
+            set BATC \uf57d $BATC
+        else if test $BATC -le 40; and test $BATC -gt 30
+            set BATC \uf57c $BATC
+        else if test $BATC -le 30; and test $BATC -gt 20
+            set BATC \uf57b $BATC
+        else if test $BATC -le 20; and test $BATC -gt 10
+            set BATC \uf57a $BATC
+        else if test $BATC -le 10; and test $BATC -gt 0
+            set BATC \uf582 $BATC
+        end
+end
+
+
+
+
+set WIFI (iwgetid -r)
+set WIFI \uf1eb $WIFI 
+
+set DATE (date +"%a %d %b, %R")
+
+set STATUS (`echo -e $WIFI "$BATC"\% \| $DATE`)
 
 xsetroot -name "$STATUS"
 sleep 30
