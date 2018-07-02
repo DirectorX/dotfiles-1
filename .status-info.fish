@@ -53,6 +53,7 @@ switch $BATS
             set BATC \uf57a $BATC"%" $SEPARATOR
         else if test $BATC -le 10; and test $BATC -gt 0
             set BATC \uf582 $BATC"%" $SEPARATOR
+            notify-send " Fucking hell, low battery! Connect this now!"
         end
 
     case "Charging"    
