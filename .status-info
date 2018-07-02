@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BATC=$(</sys/class/power_supply/BAT0/capacity)
+WIFI=$(iwgetid -r)
+DATE=$(date +"%a %d %b, %R")
+STATUS=`echo WIFI $WIFI \| BATT "$BATC"\% \| $DATE`
+
+xsetroot -name "$STATUS"
+sleep 30
