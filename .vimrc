@@ -51,6 +51,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'chriskempson/base16-vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'sheerun/vim-polyglot'
 
 " Initialize plugin system
 call plug#end()
