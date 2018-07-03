@@ -51,7 +51,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -82,6 +82,7 @@ static const char *rotateicmd[]    = { "xrandr", "--output", "DVI-I-1", "--rotat
 static const char *rotatencmd[]    = { "xrandr", "--output", "DVI-I-1", "--rotate", "normal", NULL };
 static const char *rotatelcmd[]    = { "xrandr", "--output", "DVI-I-1", "--rotate", "left", NULL };
 static const char *rotatercmd[]    = { "xrandr", "--output", "DVI-I-1", "--rotate", "right", NULL };
+static const char *scrotcmd[]      = { "scrot", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -141,6 +142,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Down,                   spawn,          {.v = rotatencmd } },
 	{ MODKEY,                       XK_Left,                   spawn,          {.v = rotatelcmd } },
 	{ MODKEY,                       XK_Right,                  spawn,          {.v = rotatercmd } },
+	{ False,                        XK_Print,                  spawn,          {.v = scrotcmd } },
 };
 
 /* button definitions */
