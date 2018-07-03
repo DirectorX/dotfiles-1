@@ -63,7 +63,7 @@ switch $BATS
             set BATC \uf58a $BATC"%" $SEPARATOR
         else if test $BATC -le 80; and test $BATC -gt 60
             set BATC \uf589 $BATC"%" $SEPARATOR
-        else if test $BATC -le 60; and test $BATC -gt 50
+        else if test $BATC -le 60; and test $BATC -gt 40
             set BATC \uf588 $BATC"%" $SEPARATOR
         else if test $BATC -le 40; and test $BATC -gt 30
             set BATC \uf587 $BATC"%" $SEPARATOR
@@ -110,7 +110,7 @@ set DATE $CALENDAR_ICON $DATE $SEPARATOR
 
 # Time
 set TIME (date +"%R")
-set TIME $TIME_ICON $TIME" "
+set TIME $TIME_ICON $TIME" " # Adds a gap at the end of the bar
 
 # Volume
 set VOLUME (amixer get Master | sed -n 's/^.*\[\([0-9]\+\)%.*$/\1/p'| uniq)
