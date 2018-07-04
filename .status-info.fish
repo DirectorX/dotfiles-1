@@ -1,6 +1,14 @@
 #!/bin/fish
 
 #--- Icons ---#
+
+# \uxxxx is just unicode character, taken from http://nerdfonts.com/#cheat-sheet
+
+# \x02 means the icons, and the following ones, will use the colors in
+# [SchemeSel] con dwm's config.h, making them lighter. This is done in case 
+# one parameter reaches dangerous values so we can change it with \x03
+# without affecting the rest - yeah it's programmed in a weird way, don't ask.
+
 set SEPARATOR \ue621
 set WIFI_ICON \ufaa8
 set WIFI_OFF_ICON \ufaa9
@@ -12,6 +20,7 @@ set CALENDAR_ICON \uf073
 set TIME_ICON \uf43a
 set VOLUME_ICON \ufa7d
 set THERMAL_ICON \uf2c7
+
 
 #--- Variables ---#
 
@@ -52,8 +61,7 @@ switch $BATS
         else if test $BATC -le 20; and test $BATC -gt 10
             set BATC \uf57a $BATC"%" $SEPARATOR
         else if test $BATC -le 10; and test $BATC -gt 0
-            set BATC \uf582 $BATC"%" $SEPARATOR
-            notify-send " Fucking hell, low battery! Connect this now!"
+            set BATC \x03\uf582 $BATC"%" \x02$SEPARATOR
         end
 
     case "Charging"    
@@ -74,11 +82,10 @@ switch $BATS
         end
 
     case "Unknown"
-        set BATC \uf590 $SEPARATOR
+        set BATC \uf590 $BATC"%" $SEPARATOR
 end
 
 # Internet
-set CONNECTION ""
 set ACTIVE_INTERFACE (ip addr show | grep "state UP" | awk '{printf "%s", substr($2,1,length($2)-1)}')
 
 if [ $ACTIVE_INTERFACE = "wlp3s0" ]
@@ -121,7 +128,7 @@ set THERMAL (cat /sys/class/thermal/thermal_zone0/temp | awk '{printf "%s°C", $
 set THERMAL $THERMAL_ICON $THERMAL $SEPARATOR
 
 # Status to be displayed
-set STATUS $VOLUME $CONNECTION $CPU_USAGE $MEMORY_USAGE $THERMAL $BATC $DATE $TIME
+set STATUS \x02$VOLUME $CONNECTION $CPU_USAGE $MEMORY_USAGE $THERMAL $BATC $DATE $TIME
 
 # Piping it to the root X window, which dwm uses as status bar
 xsetroot -name "$STATUS"
