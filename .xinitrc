@@ -5,8 +5,10 @@
 xrdb -merge -I$HOME ~/.Xresources
 
 # DWM-Status
+~/.dwmstatus/init-status.fish
+
 while true; do
-    ~/.status-info.fish
+    ~/.dwmstatus/status-info.fish
 done &
 
 # Change background
