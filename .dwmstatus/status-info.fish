@@ -3,12 +3,10 @@
 #--- Variables ---#
 
 # CPU Usage
-set CPU_USAGE (top -b -n1 | grep "Cpu(s)" | awk '{printf "%2d%%", $2 + $4}')
-set CPU_USAGE $PROCESSOR_ICON $CPU_USAGE 
+set CPU_USAGE $PROCESSOR_ICON (top -b -n1 | grep "Cpu(s)" | awk '{printf "%2d%%", $2 + $4}')
 
 # Memory Usage
-set MEMORY_USAGE (free -m | awk 'NR==2{printf "%.2f GB", $3/1024}')
-set MEMORY_USAGE $MEMORY_ICON $MEMORY_USAGE 
+set MEMORY_USAGE $MEMORY_ICON (free -m | awk 'NR==2{printf "%.2f GB", $3/1024}')
 
 # Battery
 set BATC (cat /sys/class/power_supply/BAT0/capacity)
@@ -59,9 +57,15 @@ switch $BATS
             set BATC \uf585 $BATC"%" 
         end
 
+    case "Full"
+        set BATC \uf584 $BATC"%"
+        
     case "Unknown"
         set BATC \uf590 $BATC"%" 
 end
+
+set BATL (acpi | awk '{printf "%s", $5}' | awk '{split($0,a,":"); print a[1]":"a[2]"hs"}')
+set BATC $BATC $BATL
 
 # Internet
 set ACTIVE_INTERFACE (ip addr show | grep "state UP" | awk '{printf "%s", substr($2,1,length($2)-1)}')
@@ -96,8 +100,8 @@ set TIME (date +"%R")
 set TIME $TIME_ICON $TIME" " # Adds a gap at the end of the bar
 
 # Volume
-set VOLUME (amixer get Master | sed -n 's/^.*\[\([0-9]\+\)%.*$/\1/p'| uniq)
-set VOLUME $VOLUME_ICON $VOLUME"%" 
+set VOLUME (amixer get Master | awk 'NR==5{printf "%s", $4}' | tr -d [])
+set VOLUME $VOLUME_ICON $VOLUME
 
 # CPU Temp
 set THERMAL (cat /sys/class/thermal/thermal_zone0/temp | awk '{printf "%s°C", $1/1000}')
