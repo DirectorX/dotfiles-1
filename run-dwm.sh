@@ -1,4 +1,7 @@
-ool visual stuff
+#!/bin/sh
+## run-dwm
+
+# Cool visual stuff
 xrdb -merge -I$HOME ~/.Xresources
 
 # DWM-Status
