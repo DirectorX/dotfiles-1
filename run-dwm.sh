@@ -1,34 +1,43 @@
-#!/bin/sh
-## run-dwm
-
-# Cool visual stuff
+ool visual stuff
 xrdb -merge -I$HOME ~/.Xresources
 
 # DWM-Status
-while true; do
-    BATT=$( acpi -b | sed 's/.*[charging|unknown], \([0-9]*\)%.*/\1/gi' )
-    STATUS=$( acpi -b | sed 's/.*: \([a-zA-Z]*\),.*/\1/gi' )
-    DATE=$(date +"%a %d %b, %R")
+~/.dwmstatus/init-status.fish
 
-    xsetroot -name "`echo $BATT\% $STATUS \| $DATE `" # status bar
-    sleep 30
+while true; do
+    ~/.dwmstatus/status-info.fish
 done &
 
-# Font stuff
-xset fp+ /usr/share/fonts/ &			 
-xset fp rehash &
+# Cool AF wallpaper
+while true; do
+    ~/.change-wallpaper.fish
+done &
 
 # Transparencies, shadows and transitions
 compton --config compton.conf &
 
-# Cool AF wallpaper
-setroot -fill ~/Pictures/Wallpaper/minimalist_portal_wallpaper_by_younggeorge-d5rnf8r.png 			 
-
 # Set brightness to 80%
-xrandr --output LVDS-1 --brightness 0.8
+xrandr --output LVDS1 --brightness 0.7
 
 # Spanish keyboard
 setxkbmap -layout latam -variant deadtilde
 
-# Start dwm
-exec dwm
+# Automount USBs and shit
+#sudo udiskie --automount --notify &
+
+# Relaunch DWM if the binary changes, otherwise bail
+csum=$(sha1sum $(which dwm))
+new_csum=""
+while true
+do
+    if [ "$csum" != "$new_csum" ]
+    then
+        csum=$new_csum
+        dwm
+    else
+        exit 0
+    fi
+    new_csum=$(sha1sum $(which dwm))
+    sleep 0.5
+done
+
