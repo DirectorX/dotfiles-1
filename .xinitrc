@@ -11,16 +11,13 @@ while true; do
     ~/.dwmstatus/status-info.fish
 done &
 
-# Change background
+# Cool AF wallpaper
 while true; do
     ~/.change-wallpaper.fish
 done &
 
 # Transparencies, shadows and transitions
 compton --config compton.conf &
-
-# Cool AF wallpaper
-hsetroot -fill ~/Pictures/Wallpaper/samus.jpg
 
 # Set brightness to 80%
 xrandr --output LVDS1 --brightness 0.7
@@ -29,7 +26,20 @@ xrandr --output LVDS1 --brightness 0.7
 setxkbmap -layout latam -variant deadtilde
 
 # Automount USBs and shit
-#sudo udiskie --automount --notify &
+udiskie &
 
-# Start dwm
-exec dwm
+# Relaunch DWM if the binary changes, otherwise bail
+csum=$(sha1sum $(which dwm))
+new_csum=""
+while true
+do
+    if [ "$csum" != "$new_csum" ]
+    then
+        csum=$new_csum
+        dwm
+    else
+        exit 0
+    fi
+    new_csum=$(sha1sum $(which dwm))
+    sleep 0.5
+done
