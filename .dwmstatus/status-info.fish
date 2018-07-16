@@ -92,20 +92,16 @@ else if [ $ACTIVE_INTERFACE = "enp0s25"  ]
 end
 
 # Date and time
-set DATE (date +"%a %d %b")
-set DATE $CALENDAR_ICON $DATE 
+set DATE $CALENDAR_ICON (date +"%a %d %b")
 
 # Time
-set TIME (date +"%R")
-set TIME $TIME_ICON $TIME" " # Adds a gap at the end of the bar
+set TIME $TIME_ICON (date +"%R")" " # Adds a gap at the end of the bar
 
 # Volume
-set VOLUME (amixer get Master | awk 'NR==5{printf "%s", $4}' | tr -d [])
-set VOLUME $VOLUME_ICON $VOLUME
+set VOLUME $VOLUME_ICON (amixer get Master | awk 'NR==5{printf "%s", $4}' | tr -d [])
 
 # CPU Temp
-set THERMAL (cat /sys/class/thermal/thermal_zone0/temp | awk '{printf "%s°C", $1/1000}')
-set THERMAL $THERMAL_ICON $THERMAL 
+set THERMAL $THERMAL_ICON (cat /sys/class/thermal/thermal_zone0/temp | awk '{printf "%s°C", $1/1000}')
 
 # Status to be displayed
 
@@ -114,10 +110,10 @@ set THERMAL $THERMAL_ICON $THERMAL
 # one parameter reaches dangerous values so we can change it with \x03
 # without affecting the rest - yeah it's programmed in a weird way, don't ask.
 
-set STATUS \x02$VOLUME "" $CONNECTION "" $CPU_USAGE "" $MEMORY_USAGE "" $THERMAL "" $BATC "" $DATE "" $TIME
+set STATUS $VOLUME "" $CONNECTION "" $CPU_USAGE "" $MEMORY_USAGE "" $THERMAL "" $BATC "" $DATE "" $TIME
 
 # Piping it to the root X window, which dwm uses as status bar
-xsetroot -name "$STATUS"
+xsetroot -name \x02"$STATUS"
 
 # Just an arbitrary timer
 sleep 5
