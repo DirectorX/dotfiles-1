@@ -84,22 +84,22 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-  "#282c34", /* base00 */
-  "#e06c75", /* base08 */
-  "#98c379", /* base0B */
-  "#e5c07b", /* base0A */
-  "#61afef", /* base0D */
-  "#c678dd", /* base0E */
-  "#56b6c2", /* base0C */
-  "#abb2bf", /* base05 */
-  "#545862", /* base03 */
-  "#d19a66", /* base09 */
-  "#353b45", /* base01 */
-  "#3e4451", /* base02 */
-  "#565c64", /* base04 */
-  "#b6bdca", /* base06 */
-  "#be5046", /* base0F */
-  "#c8ccd4", /* base07 */
+  "#1c2023", /* base00 */
+  "#c7ae95", /* base08 */
+  "#95c7ae", /* base0B */
+  "#aec795", /* base0A */
+  "#ae95c7", /* base0D */
+  "#c795ae", /* base0E */
+  "#95aec7", /* base0C */
+  "#c7ccd1", /* base05 */
+  "#747c84", /* base03 */
+  "#c7c795", /* base09 */
+  "#393f45", /* base01 */
+  "#565e65", /* base02 */
+  "#adb3ba", /* base04 */
+  "#dfe2e5", /* base06 */
+  "#c79595", /* base0F */
+  "#f3f4f5", /* base07 */
 };
 
 unsigned int defaultfg = 7;
